@@ -1,0 +1,34 @@
+# Se ejecuta en cada push o PR que afecte archivos JSON de resources/.
+# Instala ajv-cli para validar los JSON contra el schema.
+# Recorre todos los archivos y falla si alguno no cumple el schema.
+
+name: Validate Resources
+
+on:
+  push:
+    paths:
+      - 'resources/**.json'
+  pull_request:
+    paths:
+      - 'resources/**.json'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Install jsonschema
+        run: npm install -g ajv-cli
+
+      - name: Validate resources
+        run: |
+          for file in resources/**/*.json; do
+            echo "Validating $file"
+            ajv validate -s schemas/resource.schema.json -d "$file" --strict=false || exit 1
+          done
