@@ -1,0 +1,8 @@
+{
+  "id": "better-auth",
+  "name": "Better Auth",
+  "category": "auth",
+  "description": "Simple authentication library",
+  "url": "https://github.com/better-auth/better-auth",
+  "tags": ["auth", "security"]
+}
