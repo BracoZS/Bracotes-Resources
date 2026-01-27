@@ -7,10 +7,10 @@ name: Validate Resources
 on:
   push:
     paths:
-      - 'resources/**.json'
+      - 'resources/**/*.json'
   pull_request:
     paths:
-      - 'resources/**.json'
+      - 'resources/**/*.json'
 
 jobs:
   validate:
@@ -25,9 +25,9 @@ jobs:
         with:
           node-version: 20
 
-      # 3️⃣ Instalar AJV CLI para validar JSON
-      - name: Install jsonschema AJV CLI
-        run: npm install -g ajv-cli
+      # 3️⃣ Instalar dependencias necesarias para validar con ajv
+      - name: Install dependencies
+        run: npm install ajv ajv-formats
         
       # 4️⃣ Validar recursos JSON
       - name: Validate resources
