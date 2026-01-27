@@ -31,13 +31,4 @@ jobs:
         
       # 4️⃣ Validar recursos JSON
       - name: Validate resources
-        run: |
-          for file in resources/**/*.json; do
-            echo "Validating $file"
-            ajv validate \
-              -s schemas/resource.schema.json \
-              -d "$file" \
-              --all-errors \
-              --strict=false \
-              --format="full" || exit 1
-          done
+        run: node scripts/validate.js
