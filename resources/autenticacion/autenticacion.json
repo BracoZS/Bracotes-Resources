@@ -6,5 +6,6 @@
     "description": "Plataforma de autenticación y autorización con soporte para OAuth, SSO y passkeys.",
     "categories": ["autenticacion", "security"],
     "tags": ["oauth", "sso", "identity", "auth"]
-  }
+  },
 ]
+
