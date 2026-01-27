@@ -16,19 +16,28 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
+      # 1️⃣ Descargar el repositorio
       - uses: actions/checkout@v3
 
+      # 2️⃣ Instalar Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
 
-      - name: Install jsonschema
+      # 3️⃣ Instalar AJV CLI para validar JSON
+      - name: Install jsonschema AJV CLI
         run: npm install -g ajv-cli
-
+        
+      # 4️⃣ Validar recursos JSON
       - name: Validate resources
         run: |
           for file in resources/**/*.json; do
             echo "Validating $file"
-            ajv validate -s schemas/resource.schema.json -d "$file" --strict=false || exit 1
+            ajv validate \
+              -s schemas/resource.schema.json \
+              -d "$file" \
+              --all-errors \
+              --strict=false \
+              --format="full" || exit 1
           done
