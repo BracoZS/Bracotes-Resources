@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "id": "laws-of-ux",
+    "name": "Laws of UX",
+    "url": "https://lawsofux.com/",
+    "description": "Colección de principios psicológicos y reglas heurísticas que rigen el comportamiento humano y la interacción del usuario en entornos digitales.",
+    "categories": ["ux"],
+    "tags": ["psicología", "principios", "heurística"]
+  }
+]
