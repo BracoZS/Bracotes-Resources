@@ -1,7 +1,7 @@
 # Bracotes Resources
 
 [![License](https://img.shields.io/github/license/BracoZS/Bracotes-Resources)](LICENSE)
-[![Resources](https://img.shields.io/badge/resources---blue)](#) <!-- placeholder: actualizar con contador si se añade -->
+[![Resources](https://img.shields.io/badge/resources-blue)](#) <!-- placeholder: actualizar con contador si se añade -->
 
 Bienvenido a Bracotes Resources — una colección curada de recursos web para desarrolladores: artículos, librerías, cursos, utilidades y herramientas útiles organizadas por categorías.
 
